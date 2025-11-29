@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 class DistributedSystemSimulator:
-    def __init__(self, n_edge_devices=100, n_fog_nodes=10, n_cloud_servers=3):
+    def __init__(self, n_edge_devices=100, n_fog_nodes=20, n_cloud_servers=3):
         self.n_edge_devices = n_edge_devices
         self.n_fog_nodes = n_fog_nodes
         self.n_cloud_servers = n_cloud_servers
@@ -32,8 +32,8 @@ class DistributedSystemSimulator:
             device_type = "стационарный" if i % 2 == 0 else "мобильный"
             # Мобильные устройства имеют немного другие характеристики
             if device_type == "мобильный":
-                processing_range = (8, 20)  # Немного выше задержка
-                network_range = (8, 20)      # Менее стабильное соединение
+                processing_range = (2, 10)  # Немного выше задержка
+                network_range = (2, 10)      # Менее стабильное соединение
             else:
                 processing_range = (5, 15)  # Стабильная задержка
                 network_range = (5, 15)      # Стабильное соединение
